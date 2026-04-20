@@ -39,3 +39,37 @@ Before deploying, ensure you have the following installed and configured:
   gcloud auth login
   gcloud auth application-default login
   
+git clone https://github.com/cloudrockpl/gcp-pubsub-demo.git
+cd gcp-pubsub-demo
+
+chmod +x deploy_stack.sh cleanup-stack.sh
+
+./deploy_stack.sh
+
+Note: Deployment usually takes 5-8 minutes as it enables APIs, builds Docker containers via Cloud Build, deploys to Cloud Run, and provisions the Pub/Sub topics and Data Sinks.
+
+🎓 Training Guide (How to Use)
+Open the Frontend UI URL provided by the deployment script. The UI is numbered to match the logical flow of a message:
+
+Data Ingestion: Fill out the Sensor ID and Temperature. Choose whether to send a single message or a batch. Toggle the "Simulate Backend Failure" switch to test error handling.
+
+Core Topic: Watch messages hit the central fan-out broker.
+
+Push Model: See real-time Webhook 200 OK (or simulated 500 Server Error) logs as messages are pushed.
+
+Pull Model: Watch messages queue up. Click "Execute Pull & Send ACK" to process them.
+
+Cloud Storage (Batch): Watch the buffer fill up. Once 5 messages are hit (or 1 minute passes), the subscription flushes a .json file into the GCS bucket.
+
+BigQuery (Streaming): See data stream immediately into the BQ table via the UI polling.
+
+Dead Letter Topic (DLT): If you simulated a backend failure or ignored pull messages, watch them drop into the DLT after 5 delivery attempts.
+
+Cost Model Summary: Compare the billed kilobytes (kB) of sending individual messages versus batching them, demonstrating the 1kB minimum quota rule.
+
+🧹 Clean Up
+To avoid incurring ongoing charges for Cloud Run, Pub/Sub, and storage, run the cleanup script when you are finished with your training session:
+
+Bash
+./cleanup-stack.sh
+This will automatically delete the Subscriptions, Topics, Cloud Run services, BigQuery datasets, Storage buckets, Artifact Registries, Service Accounts, and local generated code directories.
