@@ -49,7 +49,7 @@ cd gcp-pubsub-demo
 chmod +x deploy_stack.sh cleanup-stack.sh
 
 ./deploy_stack.sh
-
+```
 Note: Deployment usually takes 5-8 minutes as it enables APIs, builds Docker containers via Cloud Build, deploys to Cloud Run, and provisions the Pub/Sub topics and Data Sinks.
 
 Open the Frontend UI URL provided by the deployment script.
