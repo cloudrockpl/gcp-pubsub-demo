@@ -54,6 +54,10 @@ Note: Deployment usually takes 5-8 minutes as it enables APIs, builds Docker con
 
 Open the Frontend UI URL provided by the deployment script.
 The UI is numbered to match the logical flow of a message:
+
+<img width="1585" height="1290" alt="image" src="https://github.com/user-attachments/assets/ea536997-2765-4153-872f-4a85bebf0e2e" />
+
+
 1. Data Ingestion
 Fill out the Sensor ID and Temperature.
 Choose whether to send a single message or a batch.
