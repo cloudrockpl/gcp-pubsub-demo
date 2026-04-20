@@ -77,6 +77,7 @@ Compare the billed kilobytes (kB) of sending individual messages versus batching
 🧹 Clean Up
 To avoid incurring ongoing charges for Cloud Run, Pub/Sub, and storage, run the cleanup script when you are finished with your training session:
 
-Bash
+```bash
 ./cleanup-stack.sh
 This will automatically delete the Subscriptions, Topics, Cloud Run services, BigQuery datasets, Storage buckets, Artifact Registries, Service Accounts, and local generated code directories.
+```
