@@ -1,4 +1,4 @@
-# ☁️ GCP Pub/Sub Full Stack Architecture Demo
+#  GCP Pub/Sub Full Stack Architecture Demo
 
 ![GCP](https://img.shields.io/badge/Google_Cloud-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -11,7 +11,7 @@ This repository contains an automated Bash deployment script that provisions a f
 
 ---
 
-## 🏗 Architecture Overview
+##  Architecture Overview
 
 This project automatically provisions the following GCP resources:
 1. **Frontend UI (Cloud Run):** A React SPA that acts as the publisher client and monitoring dashboard.
@@ -28,7 +28,7 @@ This project automatically provisions the following GCP resources:
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 Before deploying, ensure you have the following installed and configured:
 
@@ -78,7 +78,7 @@ If you simulate a backend failure or ignore pull messages, watch them drop into 
 8. Cost Model Summary
 Compare the billed kilobytes (kB) of sending individual messages versus batching them, demonstrating the 1 kB minimum quota rule.
 
-🧹 Clean Up
+ Clean Up
 To avoid incurring ongoing charges for Cloud Run, Pub/Sub, and storage, run the cleanup script when you are finished with your training session:
 
 ```bash
